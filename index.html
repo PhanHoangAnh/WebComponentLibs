@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="import" href="./components/user-card/userCard.html">
+	<link rel="import" href="./components/modal-dialog/modalDialog.html">
+	<link rel="import" href="./components/cropper/cropper.html">
+	<title>Dialog Component</title>
+</head>
+
+<body>
+	<user-card user-id="1">
+
+	</user-card>
+	<br>
+	<modal-dialog title="chipl" visible>
+		<p>This is modal-dialog</p>
+	</modal-dialog>
+	<br>
+	<button class="open">Open</button>
+	<br>
+	<cropper-wc title= "abc">
+		
+	</cropper-wc>
+
+
+</body>
+<!-- <script type="module" src="./components/modal-dialog/test.js"></script>
+<script type="module" src="/components/modal-dialog/modal-dialog.js"></script> -->
+<!-- <script type="module" src="/components/user-card/userCard.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.14/webcomponents-hi.js"></script> -->
+<script>
+	var open = document.querySelector('.open');
+	var modal = document.querySelector('modal-dialog');
+
+	modal.addEventListener("CANCEL", function () {
+		console.log("cancel event raised");
+	});
+	modal.addEventListener("OK", function () {
+		console.log("ok event raised");
+	});
+
+	open.addEventListener('click', evt => {
+		console.log("click");
+		modal.visible = true;
+	}, false);
+</script>
+
+</html>

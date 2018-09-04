@@ -1,0 +1,17 @@
+<template id='modal-dialog'>
+    <link rel="stylesheet" href="/components/modal-dialog/modalDialog.css">
+    <div class='wrapper visible' wrapper>
+        <div class='modal'>
+            <!-- <span class='title'>We need to add a title here</span> -->
+            <span class='title' title></span>
+            <div class='content'>
+                <slot></slot>
+            </div>
+            <div class='button-container'>
+                <button class='cancel' bnt="cancel">Cancel</button>
+                <button class='ok' bnt="ok">Okay</button>
+            </div>
+        </div>
+    </div>
+</template>
+<script src="./modalDialog.js"></script>
