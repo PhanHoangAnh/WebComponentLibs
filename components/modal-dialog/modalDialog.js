@@ -64,6 +64,7 @@ class ModalDialog extends HTMLElement {
         let bnts = shadowRoot.querySelectorAll('[bnt]');
         let wrapper = shadowRoot.querySelector('wrapper')
         // console.log("buttons:", bnts);
+        // this.removeAttribute("visible");
         bnts.forEach(bnt => {
             console.log('bnt', bnt, bnt instanceof HTMLElement);
             bnt.addEventListener('click', event => {
@@ -81,6 +82,7 @@ class ModalDialog extends HTMLElement {
                 }
             })
         })
+        
 
 
     }

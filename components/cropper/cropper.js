@@ -37,7 +37,7 @@ class TheCropper extends HTMLElement{
             autoCropArea: 0.9,
             cropBoxMovable: false,
             dragMode: 'move',
-            aspectRatio: 16 / 9,
+            aspectRatio: 16 / 9,            
             cropBoxResizable: false,
             // preview: document.querySelector('.preview'),
     

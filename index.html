@@ -5,6 +5,7 @@
 	<link rel="import" href="./components/user-card/userCard.html">
 	<link rel="import" href="./components/modal-dialog/modalDialog.html">
 	<link rel="import" href="./components/cropper/cropper.html">
+	<link rel="import" href="./components/bootstrap-modal/bootstrap-modal.html">
 	<title>Dialog Component</title>
 </head>
 
@@ -13,16 +14,20 @@
 
 	</user-card>
 	<br>
-	<modal-dialog title="chipl" visible>
+	<!-- <modal-dialog title="chipl" visible >
 		<p>This is modal-dialog</p>
-	</modal-dialog>
+	</modal-dialog> -->
 	<br>
-	<button class="open">Open</button>
+	<button class="open">Open normal Dialog</button>
+	<button class="open" id="bootstrapModal">Open Bootstrap Dialog</button>
 	<br>
 	<cropper-wc title= "abc">
 		
 	</cropper-wc>
+	
+	<bootstrap-modal title="chipl" visible>
 
+	</bootstrap-modal>
 
 </body>
 <!-- <script type="module" src="./components/modal-dialog/test.js"></script>
@@ -30,20 +35,28 @@
 <!-- <script type="module" src="/components/user-card/userCard.js"></script> -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.14/webcomponents-hi.js"></script> -->
 <script>
-	var open = document.querySelector('.open');
-	var modal = document.querySelector('modal-dialog');
+	// var open = document.querySelector('.open');
+	// var modal = document.querySelector('modal-dialog');
+	
 
-	modal.addEventListener("CANCEL", function () {
-		console.log("cancel event raised");
-	});
-	modal.addEventListener("OK", function () {
-		console.log("ok event raised");
-	});
+	// modal.addEventListener("CANCEL", function () {
+	// 	console.log("cancel event raised");
+	// });
+	// modal.addEventListener("OK", function () {
+	// 	console.log("ok event raised");
+	// });
 
-	open.addEventListener('click', evt => {
-		console.log("click");
-		modal.visible = true;
-	}, false);
+	// open.addEventListener('click', evt => {
+	// 	console.log("click");
+	// 	modal.visible = true;
+	// }, false);
+
+	bootstrapModal=document.querySelector('#bootstrapModal')
+	console.log('bootstrapModal', bootstrapModal);
+	bootstrapModal.addEventListener('click',function(){
+		console.log("hehe");
+		document.querySelector('bootstrap-modal').visible= true;
+	})
 </script>
 
 </html>
