@@ -63,6 +63,7 @@ class ModalDialog extends HTMLElement {
         shadowRoot.appendChild(instance);
         let bnts = shadowRoot.querySelectorAll('[bnt]');
         let wrapper = shadowRoot.querySelector('wrapper')
+        this.removeAttribute("visible");
         // console.log("buttons:", bnts);
         // this.removeAttribute("visible");
         bnts.forEach(bnt => {

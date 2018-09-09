@@ -1,0 +1,118 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <style type="text/css">
+    body {
+      background: #20262E;
+      padding: 20px;
+      font-family: Helvetica;
+    }
+
+    .section {
+      background: #fff;
+      padding: 20px;
+      font-size: 25px;
+      text-align: center;
+      transition: all 0.2s;
+      margin: 0 auto;
+      width: 300px;
+      margin-bottom: 20px;
+    }
+
+    .share-popover {
+      background: red;
+      color: white;
+      padding: 10px;
+      display: none;
+    }
+
+  </style>
+</head>
+
+<body>
+  <p>Hello world! This is PoperJS Test Bed.</p>
+
+
+
+  <div class="section">
+    <p>Section 1</p>
+    <a href="#" class="js-share-cf-btn">This is the trigger</a>
+  </div>
+
+  <div class="section">
+    <p>Section 2</p>
+    <a href="#" class="js-share-cf-btn">This is the trigger</a>
+  </div>
+
+  <div class="section">
+    <p>Section 3</p>
+    <a href="#" class="js-share-cf-btn">This is the trigger</a>
+  </div>
+
+  <div class="share-popover js-share-cf-popover">
+    This is the popup
+  </div>
+  <a href="https://stackoverflow.com/questions/49647386/popper-js-how-to-close-popup-when-clicking-outside/49647786">From Stackowver Flow</a>
+  <!-- <div class="share-popover js-share-cf-popover">
+    This is the popup
+  </div> -->
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script type="text/javascript">
+    // $(function () {
+    // var reference = $('.js-share-cf-btn');
+    // var popover = $('.js-share-cf-popover');
+    var reference = document.querySelectorAll('.js-share-cf-btn');
+    var popover = document.querySelector('.js-share-cf-popover');
+
+
+    popover.style.display = 'none';
+
+
+    document.addEventListener('click', function (e) {
+      var target = e.target;
+      // ne need to reshow and recreate poper when click over popup so return;
+      if (target == popover) return;
+
+
+      let arr = Array.from(reference);
+      for (let el of arr) {
+        console.log("element", el, el == target);
+        if (el == target) {
+          e.preventDefault();
+          popover.style.display = 'block';
+          var popper = new Popper(target, popover, {
+            placement: 'top',
+          });
+          break;
+        } else {
+          popover.style.display = 'none';
+        }
+      }
+
+
+    })
+
+
+    // });
+
+  </script>
+
+</body>
+
+</html>

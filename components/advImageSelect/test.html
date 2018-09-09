@@ -1,0 +1,297 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+	<link rel="stylesheet" href="./advImageSelect.css">
+
+</head>
+
+<body>
+
+	<template id='extraOptionImgHandler'>
+		<div class="ctr-select-box" app-role="selectHandler" onfocus="imageOption.activeShow(this, event)" onblur="imageOption.hideShow(this)"
+		    tabindex="0">
+			<div app-role="selectbox" class="ctr-select-value" onclick="imageOption.toggleShow(this, event)"> Select here
+			</div>
+			<div app-role="dropdown" class="ctr-select-down">
+				<div app-role="droppad">
+				</div>
+				<div class="s-bottom">
+					<a class="btn" onclick="imageOption.addmoreFn(this,event)" templHandler="imageHandler" comp-dimensions=[450,450]><i
+						    class="fa fa-plus"></i> Add More</a>
+				</div>
+			</div>
+		</div>
+	</template>
+	<template id='extraOptionImgItem'>
+		<div class="ctr-select-option" app-role="selectItem" onclick='imageOption.getOptionImage(this)' onfocus="imageOption.itemFocuses(this)"
+		    tabindex="0">
+			<!-- <div class="ctr-select-option" app-role="selectItem" tabindex="0">  -->
+			<div class="s-img"><img app-role="attImg" src="" class="img-flag"></div>
+			<div class="s-content">
+				<label app-role="attName"></label>
+				<div class="s-button">
+					<a class="btn" app-role="deleteImgOption" onclick="imageOption.deleteFn(this)"><i class="fa fa-times"></i> Delete</a>
+					<a class="btn" app-role="editImgOption" app-action="selectImage" templHandler="imageHandler" comp-dimensions=[450,450]><i
+						    class="fa fa-pencil"></i> Edit</a>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			// registering dependent modules                
+			selectImageHandler.initiate(imageOption.updateImageOption);
+		</script>
+	</template>
+
+	<div class=" container " data-container>
+		<p>Hello world! This is Advance Image Select Box.</p>
+		
+		<row>
+			<div app-role="imgOptionHandler" class="col-md-12" style="padding: 0px;">
+				<div class="ctr-select-box" app-role="selectHandler" onfocus="imageOption.activeShow(this, event)" onblur="imageOption.hideShow(this)"
+				    tabindex="0">
+					<div app-role="selectbox" class="ctr-select-value" onclick="imageOption.toggleShow(this, event)">
+						<!-- Select box frnt end -->
+					</div>
+					<div app-role="dropdown" class="ctr-select-down">
+						<div app-role="droppad">
+
+							<div class="ctr-select-option" app-role="selectItem" onclick="imageOption.getOptionImage(this)" onfocus="imageOption.itemFocuses(this)"
+							    tabindex="0" app-value="1">
+								<!-- <div class="ctr-select-option" app-role="selectItem" tabindex="0">  -->
+								<div class="s-img"><img app-role="attImg" src="https://raw.githubusercontent.com/PhanHoangAnh/CreateDynamicAttributeSets/master/materials/sample.jpg"
+									    class="img-flag"></div>
+								<div class="s-content">
+									<label app-role="attName">something1</label>
+									<div class="s-button">
+										<a class="btn" app-role="deleteImgOption" onclick="imageOption.deleteFn(this)"><i class="fa fa-times"></i>
+											Delete</a>
+										<a class="btn" app-role="editImgOption" app-action="selectImage" templhandler="imageHandler" comp-dimensions="[450,450]"><i
+											    class="fa fa-pencil"></i> Edit</a>
+									</div>
+								</div>
+							</div>
+							
+
+							<div class="ctr-select-option curr" app-role="selectItem" onclick="imageOption.getOptionImage(this)" onfocus="imageOption.itemFocuses(this)"
+							    tabindex="0" app-value="2">
+								<!-- <div class="ctr-select-option" app-role="selectItem" tabindex="0">  -->
+								<div class="s-img"><img app-role="attImg" src="https://raw.githubusercontent.com/PhanHoangAnh/CreateDynamicAttributeSets/master/materials/sample.jpg"
+									    class="img-flag"></div>
+								<div class="s-content">
+									<label app-role="attName">something2</label>
+									<div class="s-button">
+										<a class="btn" app-role="deleteImgOption" onclick="imageOption.deleteFn(this)"><i class="fa fa-times"></i>
+											Delete</a>
+										<a class="btn" app-role="editImgOption" app-action="selectImage" templhandler="imageHandler" comp-dimensions="[450,450]"><i
+											    class="fa fa-pencil"></i> Edit</a>
+									</div>
+								</div>
+							</div>
+							
+
+							<div class="ctr-select-option" app-role="selectItem" onclick="imageOption.getOptionImage(this)" onfocus="imageOption.itemFocuses(this)"
+							    tabindex="0" app-value="3">
+								<!-- <div class="ctr-select-option" app-role="selectItem" tabindex="0">  -->
+								<div class="s-img"><img app-role="attImg" src="https://raw.githubusercontent.com/PhanHoangAnh/CreateDynamicAttributeSets/master/materials/sample.jpg"
+									    class="img-flag"></div>
+								<div class="s-content">
+									<label app-role="attName">something3</label>
+									<div class="s-button">
+										<a class="btn" app-role="deleteImgOption" onclick="imageOption.deleteFn(this)"><i class="fa fa-times"></i>
+											Delete</a>
+										<a class="btn" app-role="editImgOption" app-action="selectImage" templhandler="imageHandler" comp-dimensions="[450,450]"><i
+											    class="fa fa-pencil"></i> Edit</a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="ctr-select-option" app-role="selectItem" onclick="imageOption.getOptionImage(this)" onfocus="imageOption.itemFocuses(this)"
+							    tabindex="0" app-value="3">
+								<!-- <div class="ctr-select-option" app-role="selectItem" tabindex="0">  -->
+								<div class="s-img"><img app-role="attImg" src="https://raw.githubusercontent.com/PhanHoangAnh/CreateDynamicAttributeSets/master/materials/sample.jpg"
+									    class="img-flag"></div>
+								<div class="s-content">
+									<label app-role="attName">something3</label>
+									<div class="s-button">
+										<a class="btn" app-role="deleteImgOption" onclick="imageOption.deleteFn(this)"><i class="fa fa-times"></i>
+											Delete</a>
+										<a class="btn" app-role="editImgOption" app-action="selectImage" templhandler="imageHandler" comp-dimensions="[450,450]"><i
+											    class="fa fa-pencil"></i> Edit</a>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<div class="s-bottom">
+							<a class="btn" onclick="imageOption.addmoreFn(this,event)" templhandler="imageHandler" comp-dimensions="[450,450]"><i
+								    class="fa fa-plus"></i> Add More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</row>
+	</div>
+	<script>
+		var imageOption = {};
+		imageOption.toggleShow = function (elem, event) {
+			if (elem) {
+				elem.classList.toggle("active");
+				var dropdown = elem.parentNode.querySelector('[app-role="dropdown"]');
+				dropdown.classList.toggle("open");
+			}
+		}
+
+		imageOption.hideShow = function (elem) {
+			// console.log(elem);
+			if (elem) {
+				elem.classList.remove("active");
+				var dropdown = elem.parentNode.querySelector('[app-role="dropdown"]');
+				dropdown.classList.remove("open");
+			}
+		}
+
+		imageOption.activeShow = function (elem, event) {
+			if (elem) {
+				elem.classList.add("active");
+				var dropdown = elem.parentNode.querySelector('[app-role="dropdown"]');
+				dropdown.classList.add("open");
+			}
+		}
+
+		imageOption.itemFocuses = function (elem) {
+			// console.log("Item focus: ", elem);
+		}
+
+		imageOption.getOptionImage = function (evt) {
+			var selectHandler = imageOption.getHandler(evt, "selectHandler");
+			// evt.stopPropagation();
+			// imgOptionHandler = imageOption.getHandler(evt, "imgOptionHandler").referParentElem
+
+			// console.log("imgOptionHandler parent: ", imgOptionHandler)
+			var selectbox = selectHandler.querySelector('[app-role="selectbox"]');
+			imageOption.toggleShow(selectbox);
+			// remove all childs
+			while (selectbox.firstChild) {
+				selectbox.removeChild(selectbox.firstChild);
+			}
+			// clone this node
+			var cln = evt.cloneNode(true);
+			// remove action Listener
+			cln.onclick = null;
+			selectbox.appendChild(cln);
+			var bntBox = cln.querySelector('.s-button');
+			if (bntBox) {
+				bntBox.parentNode.removeChild(bntBox);
+			};
+			// change the css indicate selectedItem.
+			// remove current css of selected item
+			var curr = selectHandler.querySelector('.curr');
+			if (curr) {
+				curr.classList.remove('curr');
+			};
+			// ad this css for new element
+			evt.classList.add('curr');
+		}
+
+		imageOption.updateImageOption = function (data) {
+			var selectItem = imageOption.getHandler(selectImageHandler.currentElement, "selectItem")
+			var selectImage = selectItem.querySelector('[app-role="attImg"]');
+			selectImage.setAttribute("src", data);
+			imgOptionHandler = imageOption.getHandler(selectImageHandler.currentElement, "imgOptionHandler").referParentElem
+			var itemValue = selectItem.getAttribute('app-value');
+			var imageArrStore = imgOptionHandler.CUST.ImageOptions;
+			for (var i = 0; i < imageArrStore.length; i++) {
+				if (imageArrStore[i].value == itemValue) {
+					imageArrStore[i].img = data
+				}
+			}
+			imageOption.getOptionImage(selectItem);
+			imageOption.hideShow(imageOption.getHandler(selectItem, "dropdown"));
+
+		}
+
+		// imageOption Utility
+
+		imageOption.getHandler = function (elem, att) {
+			if (elem.parentNode.getAttribute('app-role') == att) {
+				return elem.parentNode
+			} else {
+				return imageOption.getHandler(elem.parentNode, att);
+			}
+		}
+
+		imageOption.deleteFn = function (elem) {
+			event.stopPropagation();
+			var selectItem = imageOption.getHandler(elem, "selectItem");
+			var itemValue = selectItem.getAttribute('app-value');
+			var imgOptionHandler = imageOption.getHandler(selectItem, "imgOptionHandler").referParentElem
+			var imageArrStore = imgOptionHandler.CUST.ImageOptions;
+			var selectHandler = imageOption.getHandler(elem, "selectHandler");
+			var selectbox = selectHandler.querySelector('[app-role="selectbox"]');
+
+			imgOptionHandler.CUST.ImageOptions = imageArrStore.filter(function (obj) {
+				return obj.value.toString() !== itemValue;
+			})
+			imageOption.toggleShow(selectbox);
+			// remove all childs
+			while (selectbox.firstChild) {
+				selectbox.removeChild(selectbox.firstChild);
+			}
+			selectbox.innerHTML = "Select here";
+			selectItem.parentNode.removeChild(selectItem);
+		}
+
+		imageOption.addmoreFn = function (elem) {
+			var input = document.importNode(document.getElementById('extraOptionImgItem').content, true);
+			var dropPad = imageOption.getHandler(elem, 'selectHandler').querySelector('[app-role="droppad"]');
+			var imgOptionHandler = imageOption.getHandler(dropPad, "imgOptionHandler").referParentElem
+			var label = input.querySelector('[app-role="attName"]');
+			label.innerHTML = "new Item";
+			var imageArrStore = imgOptionHandler.CUST.ImageOptions;
+			var max = Math.max.apply(Math, imageArrStore.map(function (o) {
+				return o.value;
+			}));
+			var imgTempObj = {
+				img: null,
+				optName: null,
+				value: max + 1
+			}
+			imageArrStore.push(imgTempObj);
+			input.querySelector('[app-role="selectItem"]').setAttribute('app-value', max + 1);
+			var editBnt = input.querySelector('[app-role="editImgOption"]')
+			dropPad.appendChild(input);
+			selectImageHandler.openImageUploadModal(editBnt);
+
+		}
+
+		imageOption.changeAttributeName = function (elem) {
+			var controlHandler = imageOption.getHandler(selectImageHandler.currentElement, "selectItem")
+			var imgOpt = controlHandler.querySelector('[app-role="attName"]');
+			var itemValue = controlHandler.getAttribute('app-value');
+			imgOpt.innerHTML = elem.value;
+
+			var imgOptionHandler = imageOption.getHandler(imgOpt, "imgOptionHandler").referParentElem
+			var imageArrStore = imgOptionHandler.CUST.ImageOptions;
+			for (var i = 0; i < imageArrStore.length; i++) {
+				if (imageArrStore[i].value == itemValue) {
+					imageArrStore[i].optName = elem.value;
+				}
+			}
+			imageOption.getOptionImage(controlHandler);
+			imageOption.hideShow(imageOption.getHandler(controlHandler, "dropdown"));
+		}
+	</script>
+</body>
+
+</html>

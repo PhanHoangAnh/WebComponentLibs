@@ -1,16 +1,19 @@
 <template id="bootstrap-modal">
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+	<link rel="stylesheet" href="/global.css">
+	<link rel="stylesheet" href="/components/bootstrap-modal/bootstrap-modal.css">
     <!-- I am Bootstrap Modal -->
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
         Launch demo modal
-    </button>
+    </button> -->
     
     <!--  -->
-    <div class="modal fade show " wrapper id="BootstrapModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" style="display: block;">
-			<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal fade show wrapper" wrapper tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="display: block;">
+			<!-- <div class="modal-dialog  largeModal" role="document" component-width> -->
+				<div class="modal-dialog " role="document" component-width>
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" title>Modal title</h5>
@@ -20,6 +23,7 @@
 					</div>
 					<div class="modal-body">
 						... I am Bootstrap Modal Component
+						<slot></slot>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal" bnt="cancel">Close</button>
