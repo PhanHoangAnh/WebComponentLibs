@@ -16,12 +16,7 @@ class Bootstrap_Modal extends HTMLElement {
 
         if (this.width) {
             let contentWidth = template.querySelector('[component-width]');
-            // if (this.width == "large") {
-            //     contentWidth.classList.add("largeModal");
-            // }
-            // if (this.width == "full") {
-            //     contentWidth.classList.add("fullModal");
-            // }
+
             switch (this.width) {
                 case "large":
                     contentWidth.classList.add("largeModal");
