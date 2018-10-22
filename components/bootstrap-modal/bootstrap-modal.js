@@ -69,12 +69,15 @@ class Bootstrap_Modal extends HTMLElement {
             let backdrop = this.shadowRoot.querySelector('[backdrop]');
             if (newVal === null) {
                 // this.shadowRoot.querySelector('[wrapper]').classList.remove("visible");                
-                this.shadowRoot.querySelector('[wrapper]').style.display = "none";
+                this.shadowRoot.querySelector('[wrapper]').classList.remove("visible");                
+                this.shadowRoot.querySelector('[wrapper]').classList.add("invisible");                
+                // this.shadowRoot.querySelector('[wrapper]').style.display = "none";
                 // backdrop.classList.remove ("show");
                 backdrop.style.display = "none";
             } else {
-                // this.shadowRoot.querySelector('[wrapper]').classList.add("visible");
-                this.shadowRoot.querySelector('[wrapper]').style.display = "block";
+                 this.shadowRoot.querySelector('[wrapper]').classList.add("visible");
+                 this.shadowRoot.querySelector('[wrapper]').classList.remove("invisible");                
+                // this.shadowRoot.querySelector('[wrapper]').style.display = "block";
                 // backdrop.classList.add ("show");
                 backdrop.removeAttribute('style');
             }

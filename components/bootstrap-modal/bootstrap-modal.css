@@ -16,8 +16,15 @@
     opacity: 1;
     visibility: visible;
     transform: scale(1);
-    transition: visibility 0s linear 0s, opacity .25s 0s, transform .25s;
+    transition: visibility .2s linear .3s, opacity .85s 0s, transform .85s;
 }
+.invisible {
+    opacity: 1;
+    visibility: hidden;
+    transform: scale(1);
+    transition: visibility .2s linear .3s, opacity .85s 0s, transform .85s;
+}
+
 
 .modal {
     overflow-x: hidden;
