@@ -1,4 +1,4 @@
-var currentDocument = document.currentScript.ownerDocument;
+import temp from './bootstrap-modal.js';
 
 class Bootstrap_Modal extends HTMLElement {
     constructor() {
@@ -9,9 +9,12 @@ class Bootstrap_Modal extends HTMLElement {
         const shadowRoot = this.attachShadow({
             mode: 'open'
         });
-        console.log('currentDocument:', currentDocument);
-        const template = currentDocument.querySelector("#bootstrap-modal").content;
-        console.log("template:", template);
+        // const template = currentDocument.querySelector("#bootstrap-modal").content;
+        // console.log("template:", template);
+
+        shadowRoot.innerHTML = temp;
+        const template = shadowRoot.querySelector("#bootstrap-modal").content;
+
         const title = template.querySelector('[title]');
         title.innerHTML = this.title;
 

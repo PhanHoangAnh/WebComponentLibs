@@ -2,41 +2,41 @@
 <html>
 
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="import" href="./components/user-card/userCard.html">
 	<link rel="import" href="./components/modal-dialog/modalDialog.html">
-	<!-- <link rel="import" href="./components/cropper/cropper.html"> -->
-	<!-- <link rel="import" href="./components/bootstrap-modal/bootstrap-modal.html"> -->
-	<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-	
+	<link rel="import" href="./components/cropper/cropper.html">
+	<link rel="import" href="./components/bootstrap-modal/bootstrap-modal.html">
 	<title>Dialog Component</title>
 </head>
 
-<body >
+<body>
 
 	<br>
-	
-	<modal-dialog title="chipl" visible >
+	<ul>
+		<li><a href="./BootstrapModalDialogTest.html">BootstrapModalDialog</a></li>
+	</ul>
+
+	<!-- <modal-dialog title="chipl" visible>
 		<p>This is modal-dialog</p>
 		<user-card user-id="1"></user-card>
 	</modal-dialog>
 	<br>
 	<button class="open">Open normal Dialog</button>
 	<button class="open" id="bootstrapModal">Open Bootstrap Dialog</button>
-	<!-- <button class="open" id="Bootstrap_Modal">Open Bootstrap Dialog 2</button> -->
 	<br>
 	
 	
-	<bootstrap-modal title="chipl" visible width="large">
-		<!-- This is outsite of cropper component -->
+	<bootstrap-modal title="chipl" visible>
+		This is outsite of bootstrap component
 		<cropper-wc title="abc"></cropper-wc>		
-	</bootstrap-modal>
+	</bootstrap-modal> -->
 
 </body>
-<script type="module" src="./components/BootstrapModal/BootstrapModal.js"></script>
-<script type="module" src="./components/cropper/Cropper.js"></script>
-<script>
+<!-- <script type="module" src="./components/modal-dialog/test.js"></script>
+<script type="module" src="/components/modal-dialog/modal-dialog.js"></script> -->
+<!-- <script type="module" src="/components/user-card/userCard.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.14/webcomponents-hi.js"></script> -->
+<!-- <script>
 	var open = document.querySelector('.open');
 	var modal = document.querySelector('modal-dialog');
 
@@ -59,6 +59,6 @@
 		console.log("hehe");
 		document.querySelector('bootstrap-modal').visible = true;
 	})
-</script>
+</script> -->
 
 </html>
