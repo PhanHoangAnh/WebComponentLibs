@@ -1,6 +1,8 @@
 // var currentDocument = document.currentScript.ownerDocument;
 // console.log("CropperJS");
 import temp from "./cropperHtml.js";
+import Cropper from "../../node_modules/cropperjs/dist/cropper.esm.js"
+
 
 class TheCropper extends HTMLElement{
     constructor(){
@@ -14,7 +16,7 @@ class TheCropper extends HTMLElement{
         });
         shadowRoot.innerHTML=temp;
         const template = shadowRoot.querySelector("#cropper-comp").content;
-        // console.log("template:",template);
+        console.log("template:",template);
         const instance = template.cloneNode(true);
         
         // adding instance first and then adding event listener later by query shadowRoot
@@ -93,7 +95,6 @@ class TheCropper extends HTMLElement{
             }
         };
         var image = shadowRoot.getElementById('image');
-        
         var myCropper = new Cropper(image, option);
         //
         let fileBnt = shadowRoot.querySelector('#file')
